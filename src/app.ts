@@ -1,8 +1,8 @@
-import bodyParser from "body-parser";
-import express, { Application,Request,Response } from "express"
+import bodyParser from 'body-parser';
+import express, { Application,Request,Response } from 'express'
 import cors from 'cors';
 import { IRoute } from './interfaces/routeInterface';
-import routes from "./routes";
+import routes from './routes';
 
 export const app: Application = express();
 export const PORT: number = 3001;
@@ -14,7 +14,6 @@ const initializeMiddleware = () => {
 }
 
 const initializeRoutes = (routes: IRoute[]) => {
-    // console.log(routes[0].router.route);
     routes.forEach(route => {
         app.use('/api/v1/', route.router);
     });
