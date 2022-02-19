@@ -1,12 +1,11 @@
-
 import {Router } from "express";
 import uploadProducts from "../middleware/uploadProduct";
 
 
-const path = '/products';
+const path = '/upload/products';
 const router = Router();
 
-router.route(path).get(uploadProducts)
+router.route(path).post(uploadProducts)
 
 
 const uploadProductRoute = {
