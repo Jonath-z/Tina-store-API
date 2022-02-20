@@ -19,19 +19,19 @@ const uploadProducts = async (
     try {
         await db.collection('products').insertOne(data);
         res.json({
-            status: 200,
-            message: 'image uploaded'
+            status: 201,
+            message: 'product uploaded'
         });
+        next();
     } catch (err) {
         if (err) {
             res.json({
-                status: 500,
+                status: 400,
                 message: 'uploading failed'
             });
         }
     }
 
-    next();
 }
 
 export default uploadProducts;
