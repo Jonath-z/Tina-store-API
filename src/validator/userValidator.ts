@@ -14,4 +14,14 @@ const signup = (req: Request, res: Response, next: NextFunction) => {
     validatorHandler(req, res, schema, next);
 }
 
-export const userValodator = { signup };
+const login = (req: Request, res: Response, next: NextFunction) => {
+    console.log(req.body, 'from validator');
+    const schema = Joi.object().keys({
+        email: Joi.string().email().required(),
+        password: Joi.string().min(4).required()
+    })
+
+    validatorHandler(req, res, schema, next);
+}
+
+export const userValodator = { signup,login };
