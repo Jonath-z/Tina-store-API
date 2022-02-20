@@ -21,6 +21,7 @@ const signup = async (
         await db.collection('users').insertOne(data);
         res.json({
             status: 201,
+            user: data,
             message:'user created'
         })
     } catch {
