@@ -19,6 +19,7 @@ const login = async (
         if (isCorrectPassword) {
             res.json({
                 status: 201,
+                user: user,
                 message: 'user logged in'
             });
             next();
