@@ -17,7 +17,7 @@ const getProducts = async (
     } catch (err) {
         if (err) {
             res.json({
-                status: 500,
+                status: 400,
                 message: 'failed to fetch data from database'
             })
         }
