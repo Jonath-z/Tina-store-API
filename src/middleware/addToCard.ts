@@ -12,11 +12,10 @@ const addToCard = async (
     
     try {
         await db.collection('users').findOneAndUpdate({ email }, {
-            $set:{
-                card: [...data]
+            $addToSet: {
+                card: data
             }
-        })
-
+        });
         res.json({
             status: 201,
             message: 'product added to card'
