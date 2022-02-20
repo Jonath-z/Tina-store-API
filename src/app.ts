@@ -3,9 +3,12 @@ import express, { Application,Request,Response } from 'express'
 import cors from 'cors';
 import { IRoute } from './interfaces/routeInterface';
 import routes from './routes';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export const app: Application = express();
-export const PORT: number = 3001;
+export const PORT: string | number = process.env.PORT || 3001;
 
 const initializeMiddleware = () => {
     app.use(bodyParser.json());
