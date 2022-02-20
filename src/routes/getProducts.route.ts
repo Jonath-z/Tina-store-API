@@ -1,7 +1,6 @@
 import {Router } from "express";
 import getProducts from "../middleware/getAllProducts";
 
-
 const path = '/products';
 const router = Router();
 
