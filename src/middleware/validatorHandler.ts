@@ -9,16 +9,17 @@ const validatorHandler = (
 ) => {
 
     const { error } = schema.validate(req.body);
+    console.log(req.body);
 
-    if (error){
+    if (error) {
         res.json({
             status: 400,
-            message: 'bad request in the form'
+            message: 'data validation failed',
+            error: error
         })
+    } else {
+        next();
     }
-    
-    next();
-    
 }
 
 
