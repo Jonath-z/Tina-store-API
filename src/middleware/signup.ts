@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { db } from "../database/initializeDB";
+import { hash } from '../utils/passwordUtils';
 
 
 const signup = async (
@@ -8,16 +9,18 @@ const signup = async (
     next: NextFunction
 ) => {
 
+    const hashedPassword = hash(req.body.password);
+
     const data = {
         name: req.body.name,
         email: req.body.email,
-        password: req.body.password
+        password: hashedPassword
     };
 
     try {
         await db.collection('users').insertOne(data);
         res.json({
-            status: 200,
+            status: 201,
             message:'user created'
         })
     } catch {
