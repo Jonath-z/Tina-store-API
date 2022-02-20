@@ -8,11 +8,11 @@ export const app: Application = express();
 export const PORT: number = 3001;
 
 const initializeMiddleware = () => {
-    app.use(express.json());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(cors());
 }
+initializeMiddleware();
 
 const initializeRoutes = (routes: IRoute[]) => {
     routes.forEach(route => {
@@ -30,7 +30,6 @@ const initializeDefaultRoute = () => {
 }
 
 export const App = () => {
-    initializeDefaultRoute();
-    initializeMiddleware();
     initializeRoutes(routes)
+    initializeDefaultRoute();
 }
