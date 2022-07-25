@@ -1,19 +1,14 @@
-import {Router } from "express";
+import { Router } from "express";
 import archiveProduct from "../middleware/archiveCard";
 
-
-const path = '/archive';
+const path = "/archive";
 const router = Router();
 
-router.route(path)
-    .put(
-        archiveProduct
-    );
+router.route(path).put(archiveProduct);
 
 const archiveProductRoute = {
-    path,
-    router
-}
-
+  path,
+  router,
+};
 
 export default archiveProductRoute;

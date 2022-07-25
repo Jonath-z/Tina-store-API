@@ -1,16 +1,14 @@
-import {Router } from "express";
+import { Router } from "express";
 import getProducts from "../middleware/getAllProducts";
 
-const path = '/products';
+const path = "/products";
 const router = Router();
 
 router.route(path).get(getProducts);
 
-
 const getProductsRoute = {
-    path,
-    router
-}
-
+  path,
+  router,
+};
 
 export default getProductsRoute;

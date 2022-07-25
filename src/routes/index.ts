@@ -9,15 +9,15 @@ import archiveProductRoute from "./archiveProductRoute";
 import getArchivedProductRoute from "./getArchivedProductRoute";
 
 const routes: any[] = [
-   uploadProductRoute,
-   getProductsRoute,
-   signupRoute,
-   loginRoute,
-   addToCardRoute,
-   getCardRoute,
-   deleteProductByIdRoute,
-   archiveProductRoute,
-   getArchivedProductRoute
+  uploadProductRoute,
+  getProductsRoute,
+  signupRoute,
+  loginRoute,
+  addToCardRoute,
+  getCardRoute,
+  deleteProductByIdRoute,
+  archiveProductRoute,
+  getArchivedProductRoute,
 ];
 
 export default routes;
